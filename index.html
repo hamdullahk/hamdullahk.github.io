@@ -3,10 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamdullah K</title>
+    <title>Hamdullah Karamollaoğlu | Kişisel Web Sitesi</title>
+    <style>
+        /* Genel stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Başlık ve sekmeler */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Sekme içerikleri */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Sayfa içeriği */
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Merhaba, bu benim GitHub Pages sitem!</h1>
-    <p>Bu sayfa GitHub Pages kullanılarak oluşturulmuştur.</p>
+
+<header>
+    <h1>Hamdullah Karamollaoğlu'nun Kişisel Web Sitesi</h1>
+</header>
+
+<!-- Sekme Menüsü -->
+<nav>
+    <a onclick="openTab(event, 'home')">Anasayfa</a>
+    <a onclick="openTab(event, 'about')">Hakkında</a>
+    <a onclick="openTab(event, 'publications')">Akademik Yayınlar</a>
+    <a onclick="openTab(event, 'projects')">Projeler</a>
+    <a onclick="openTab(event, 'contact')">İletişim</a>
+</nav>
+
+<!-- Sekme İçerikleri -->
+<section>
+    <div id="home" class="tab-content active">
+        <h2>Anasayfa</h2>
+        <p>Merhaba! Bu benim kişisel web sitem. Burada projelerim, hakkımda bilgiler ve iletişim detaylarımı bulabilirsiniz.</p>
+    </div>
+    <div id="about" class="tab-content">
+        <h2>Hakkında</h2>
+        <p>Ben Hamdullah Karamollaoğlu, bilgisayar mühendisi ve teknoloji tutkunu birisiyim. Siber güvenlik, yapay zeka ve veri bilimi alanlarında çalışmalar yürütüyorum.</p>
+        <p>Eğitim geçmişim, uzmanlık alanlarım ve profesyonel deneyimlerim bu bölümde yer almaktadır.</p>
+    </div>
+    <div id="publications" class="tab-content">
+        <h2>Akademik Yayınlar</h2>
+        <ul>
+            <li>Yayın 1: <em>IoT Güvenliği Üzerine Bir İnceleme</em>, 2022</li>
+            <li>Yayın 2: <em>Makine Öğrenmesi ile Saldırı Tespiti</em>, 2023</li>
+            <li>Yayın 3: <em>Veri Bilimi ve Yapay Zeka Uygulamaları</em>, 2024</li>
+        </ul>
+    </div>
+    <div id="projects" class="tab-content">
+        <h2>Projeler</h2>
+        <p>Üzerinde çalıştığım bazı projeler:</p>
+        <ul>
+            <li>Proje 1: IoT Güvenlik Çözümü</li>
+            <li>Proje 2: Makine Öğrenmesi ile Saldırı Tespiti</li>
+            <li>Proje 3: Derin Öğrenme ile Görüntü Sınıflandırma</li>
+        </ul>
+    </div>
+    <div id="contact" class="tab-content">
+        <h2>İletişim</h2>
+        <p>Bana ulaşmak için aşağıdaki bilgileri kullanabilirsiniz:</p>
+        <p>Email: hamdullah@example.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/hamdullahk" target="_blank">LinkedIn Profilim</a></p>
+    </div>
+</section>
+
+<!-- JavaScript Sekme Kontrolü -->
+<script>
+    function openTab(event, tabId) {
+        // Tüm sekme içeriklerini gizle
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Tıklanan sekmenin içeriğini göster
+        document.getElementById(tabId).classList.add('active');
+
+        // Tüm sekmeleri pasif yap
+        const tabs = document.querySelectorAll('nav a');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Tıklanan sekmeyi aktif yap
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
 </body>
 </html>
